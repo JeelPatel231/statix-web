@@ -1,4 +1,4 @@
-{#if $navigating}
+{#if intra_nav}
 <div class="download-pane">
     <div class="display2 capitalize">
         Loading...
@@ -52,6 +52,16 @@
 
 <script>
 import { navigating } from '$app/stores'
+let intra_nav = false;
+
+navigating.subscribe((val)=>{
+    if (val && val.from.host == val.to.host) {
+        intra_nav = true
+    } else {
+        intra_nav = false
+    }
+})
+
 export let response;
 </script>
 
