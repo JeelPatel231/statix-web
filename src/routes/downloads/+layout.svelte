@@ -20,7 +20,7 @@
 
 </style>
 
-<script lang="ts">
+<script>
 export let data;
 import SearchPane from "../../components/SearchPane.svelte";
 </script>

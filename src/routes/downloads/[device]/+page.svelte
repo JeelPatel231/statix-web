@@ -53,7 +53,7 @@
 }
 </style>
 
-<script lang="ts">
+<script>
 import DownloadEntry from "../../../components/DownloadEntry.svelte";
 export let data;
 </script>
