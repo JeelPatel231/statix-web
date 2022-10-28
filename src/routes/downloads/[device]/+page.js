@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
  
 export const load = async ({ fetch, params }) => {
-  let resp = await fetch(`http://localhost:5173/api/${params.device}`)
+  let resp = await fetch(`/api/${params.device}`)
   if(!resp.ok) throw error(resp.status,resp.statusText)
   
   let data = {}
