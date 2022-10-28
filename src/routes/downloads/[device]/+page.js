@@ -4,10 +4,12 @@ export const load = async ({ fetch, params }) => {
   let resp = await fetch(`/api/${params.device}`)
   if(!resp.ok) throw error(resp.status,resp.statusText)
   
-  let data = {}
-  data.deviceData = formatBuildTypes((await resp.json()).response[0])
+  let deviceData = formatBuildTypes((await resp.json()).response[0])
  
-  return data
+  return {
+    deviceData,
+    codename : params.device
+  }
 }
 
 const formatBuildTypes = (data_arr) => {

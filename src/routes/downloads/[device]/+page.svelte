@@ -1,6 +1,9 @@
 <div class="download-info background">
+    <div class="display-medium pl-24 pv-24">
+        {data.codename.toUpperCase()}
+    </div>
     {#each Object.entries(data.deviceData) as [buildType,romList]}
-        <div class="buildtype on-background-text headline-large">
+        <div class="pl-24 pv-16 on-background-text headline-large">
             {buildType}
         </div>
         <div class="flex-parent">
@@ -26,8 +29,14 @@
     padding: 24px;
 }
 
-.buildtype{
-    padding: 24px;
+.pv-16{
+    padding: 16px 0px;
+}
+.pv-24{
+    padding: 24px 0px;
+}
+.pl-24{
+    padding-left: 24px;
 }
 
 .visit-archive{
